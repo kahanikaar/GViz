@@ -3,8 +3,7 @@ Graph Visualization Application.
 GViz is written in Python Programming Language and developed as a Command Line interface to generate and store visualizations of directed and undirected graphs.
 
 #### Demo
-
-[![Watch the video](https://img.youtube.com/vi/lPBD7NmRBFQ/maxresdefault.jpg)](https://youtu.be/lPBD7NmRBFQ)
+View Demo run of the application [here](https://youtu.be/lPBD7NmRBFQ)
 
 ## Install
 ### Supported OS
