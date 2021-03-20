@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+#!/usr/bin/env python2
+
+import argparse
+import sys
+import pandas as pd
+import networkx as nx
+import matplotlib.pyplot as plt
+
+
+class GraphVisualize:
+    def __init__(self):
+        self.data=[]
+
+    def addEdge(self,node1,node2):
+        self.data.append([node1,node2])
+
+    def undirectedVisualize(self):
+        N=nx.Graph()
+        N.add_edges_from(self.data)
+        nx.draw_networkx(N)
+
+
+    def directedVisualize(self):
+        N=nx.DiGraph()
+        N.add_edges_from(self.data)
+        pos=nx.spring_layout(N)
+        nx.draw_networkx(N,pos,node_size=500)
+
+
+    def save(self,format):
+        plt.savefig("Graph."+format, format=format)
+
+
+
+
+
+def visualize(args):
+    print("GViz - Application started running.")
+    G=GraphVisualize()
+    data=pd.read_csv(args.path,delimiter=",")
+    for i in range(0,data.shape[0]):
+        G.addEdge(data.loc[i][0],data.loc[i][1])
+    print("Edges imported from file successfully!")
+    if args.directed:
+        G.directedVisualize()
+        print("Plotting Directed Graph")
+    else:
+        G.undirectedVisualize()
+        print("Plotting Undirected Graph")
+    if args.save:
+        G.save(args.save)
+        print("Saving file in ."+args.save+" format")
+    plt.show()
+    return "Visualization Successful!\n"
+
+
+
+if __name__=='__main__':
+    parser = argparse.ArgumentParser(description='Graph Visualizing Application')
+    parser.add_argument('--path','-p',type=str,required=True,help="Enter the source file path for data about Nodes & vertices of graph")
+    parser.add_argument('--directed','-d',action='store_true',help='Visualizing graph in directed mode.')
+    parser.add_argument('--save',"-s",nargs="?",const="png",default=False,help='Save the graph in specified image format.')
+
+    args=parser.parse_args()
+    sys.stdout.write(str(visualize(args)))
+
+
+
