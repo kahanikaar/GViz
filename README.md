@@ -4,8 +4,7 @@ GViz is written in Python Programming Language and developed as a Command Line i
 
 #### Demo
 
-[![SC2 Video](doc/SC2_youtube.gif)](hhttps://youtu.be/lPBD7NmRBFQ)
-
+[![Watch the video](https://img.youtube.com/vi/lPBD7NmRBFQ/maxresdefault.jpg)](https://youtu.be/lPBD7NmRBFQ)
 
 ## Install
 ### Supported OS
