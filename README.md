@@ -8,11 +8,11 @@ Linux
 FreeBSD  
 OSX  
 
-### Installation Instructions
-git clone https://github.com/kahanikaar/GViz.git
-cd GViz
-pip install -r requirements
-./GViz --help
+### Installation Instructions  
+git clone https://github.com/kahanikaar/GViz.git  
+cd GViz  
+pip install -r requirements  
+./GViz --help  
 
 ### Running the CLI Application
 1. Data about the nodes and vertices is to be stored in .csv or any files with comma separated values without any labels where each row or entry of the file is a vertex of the graph in the format given below  
